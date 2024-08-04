@@ -21,7 +21,7 @@ lb config noauto \
     --parent-mirror-binary "https://repo2.vanillaos.org" \
     --parent-mirror-binary "https://pkg.surfacelinux.com/debian/" \
     \
-    --archive-areas "main contrib non-free non-free-firmware" \
+    --archive-areas "main contrib non-free non-free-firmware release" \
     --mirror-bootstrap "$MIRROR_URL" \
     --mirror-chroot-security "http://deb.debian.org/debian-security" \
     --mirror-binary-security "http://deb.debian.org/debian-security" \
