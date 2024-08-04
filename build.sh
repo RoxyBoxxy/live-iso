@@ -56,7 +56,7 @@ build () {
 # LIVE-BUILD CONFIG #
 #-------------------#
 "
-  wget -qO - https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc | gpg --dearmor |  dd of=/usr/share/keyrings/linux_surface.gpg
+  wget https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc  -qO- | gpg --import --no-default-keyring --keyring /usr/share/keyrings/linux_surface.gpg
   lb config
 
   echo -e "
