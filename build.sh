@@ -40,7 +40,7 @@ build () {
   cp -r "$BASE_DIR"/etc/* .
   # Make sure conffile specified as arg has correct name
   cp -f "$BASE_DIR"/"$CONFIG_FILE" terraform.conf
-
+  wget -qO - https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc | gpg --dearmor |  dd of=/usr/share/keyrings/linux_surface.gpg
   # Symlink chosen package lists to where live-build will find them
   ln -s "package-lists.$PACKAGE_LISTS_SUFFIX" "config/package-lists"
 
