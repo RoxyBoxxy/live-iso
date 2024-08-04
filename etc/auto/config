@@ -4,11 +4,6 @@ set -e
 
 . ./terraform.conf
 
-if [ "$HWE_KERNEL" = "yes" ]; then
-    KERNEL_FLAVORS="amd64-hwe-${BASEVERSION}"
-else
-    KERNEL_FLAVORS="amd64"
-fi
 
 lb config noauto \
     --architectures "$ARCH" \
@@ -16,7 +11,6 @@ lb config noauto \
     --distribution "$BASECODENAME" \
     --parent-distribution "$BASECODENAME" \
     --linux-packages "linux-image-surface linux-headers-surface" \
-    --linux-flavours "$KERNEL_FLAVORS" \
     --bootappend-live "boot=live config username=vanilla user-fullname=Vanilla quiet splash bgrt_disable" \
     \
     --parent-archive-areas "main contrib non-free non-free-firmare" \
